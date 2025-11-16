@@ -310,3 +310,66 @@ body {
     bottom: 20px;
     transform: rotate(0deg) scale(1);
 }
+
+.restart {
+    display: block;
+    margin: 60px auto;            /* Центр по горизонталі */
+    width: 40%;
+    padding: 18px 30px;
+
+    background: linear-gradient(145deg, #6fd3e1, #4fb3c9); /* морський градієнт */
+    border: 4px solid #035f7c; 
+    border-radius: 25px;
+
+    color: #012b3b;
+    font-size: 36px;
+    font-family: "Playwrite DE Grund Guides", cursive;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+
+    text-shadow: 3px 3px 6px #002a4d;          /* темно-синя тінь */
+    box-shadow: 0 8px 20px rgba(0, 50, 90, 0.45);
+
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+
+    animation: restartWave 3.3s ease-in-out infinite; /* покачування */
+}
+
+/* 🌀 Хвильова анімація кнопки */
+@keyframes restartWave {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(1deg) translateY(-3px); }
+    50% { transform: rotate(0deg) translateY(1px); }
+    75% { transform: rotate(-1deg) translateY(-2px); }
+    100% { transform: rotate(0deg) translateY(0); }
+}
+
+/* 💧 Внутрішнє хвильове світло */
+.restart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 250%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35) 0%, transparent 70%);
+    animation: restartShine 4s linear infinite;
+}
+
+@keyframes restartShine {
+    0%   { left: -120%; }
+    50%  { left: 0%; }
+    100% { left: 120%; }
+}
+
+/* 🐬 Ховер-ефект */
+.restart:hover {
+    transform: scale(1.07);
+    background: linear-gradient(145deg, #8be3f2, #62c8dd);
+    box-shadow: 0 12px 28px rgba(0, 55, 95, 0.55);
+}

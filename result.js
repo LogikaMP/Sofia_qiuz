@@ -73,7 +73,7 @@ for (let i=0; i<questions.length; i++){
       </div>`
 }
 
-
+// анімація
 anime ({
     targets:".result",
     translateY:["-500px","0px"],
@@ -105,3 +105,22 @@ window.addEventListener("scroll", () => {
         }
     }
 });
+
+// перезапуск на початок
+let restart = document.querySelector('.restart')
+restart = addEventListener('click', function(){
+
+anime({
+    targets: restart,
+    scale: [0.8, 1],              // зменшення → нормальний розмір
+    rotate: [-2, 2],               // легке покачування
+    opacity: [0, 1],               // плавна поява
+    duration: 1500,
+    easing: 'easeInOutSine'             // повторювати покачування
+
+}).finished.then(function(){
+    window.location.replace("test.html")
+})
+})
+
+

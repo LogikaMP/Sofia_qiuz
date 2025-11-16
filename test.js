@@ -18,7 +18,7 @@ let q_index = 0 // індекс поточного запитання
 let score = 0 // кількість правильних відповідей
 let btn_ans = document.querySelectorAll('.ans') // кнопки відповідей
 let qw_text = document.querySelector('.qw') // текст запитання
-
+// витянуємо з потрібного файла потрібний елемент
 let img = document.querySelector(".img")
 let qw = ""
 let answers = []
